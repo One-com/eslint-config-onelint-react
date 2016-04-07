@@ -50,15 +50,27 @@ function createTestCase (codeBlock, index) {
     return l;
 }
 
-function lintText (text, cb) {
-    var eslint = require('eslint');
+function createLinterConfig() {
     var eslintConfig = require('../index.js');
+
+    if (Array.isArray(eslintConfig.plugins)) {
+        var engine = new eslint.CLIEngine(eslintConfig);
+        eslintConfig.plugins.forEach(function (plugin) {
+            engine.addPlugin(plugin, require('eslint-plugin-' + plugin));
+        });
+    }
+
+    return eslintConfig;
+}
+
+function lintText (text, cb) {
     var result;
     try {
         result = eslint.linter.verify(text, eslintConfig);
     } catch (err) {
         return cb(err);
     }
+
     return cb(null, result);
 }
 
@@ -74,6 +86,9 @@ function md2js (content, fileName) {
     var codeLines = [];
 
     codeLines.push("var expect = require('unexpected').clone();");
+    codeLines.push("var eslint = require('eslint');");
+    codeLines.push(createLinterConfig.toString());
+    codeLines.push("var eslintConfig = createLinterConfig()");
     codeLines.push(lintText.toString());
     codeLines.push("describe('" + fileName + "', function () {");
     codeLines = codeLines.concat(codeBlocks.map(createTestCase).reduce(function (list, item) {
