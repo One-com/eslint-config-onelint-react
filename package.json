@@ -1,0 +1,35 @@
+{
+  "name": "eslint-config-onelint-react",
+  "version": "0.0.0",
+  "description": "eslint configuration for one.com react code style",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "peerDependencies": {
+    "eslint": "^2",
+    "eslint-plugin-react": "^4.3.0"
+  },
+  "devDependencies": {
+    "eslint": "2.7.0",
+    "eslint-plugin-react": "4.3.0",
+    "mocha": "2.4.5",
+    "unexpected": "10.13.0"
+  },
+  "keywords": [
+    "onelint",
+    "react",
+    "eslint",
+    "eslint-config"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/One-com/eslint-config-onelint-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/One-com/eslint-config-onelint-react/issues"
+  },
+  "homepage": "https://github.com/One-com/eslint-config-onelint-react#readme",
+  "author": "Gustav Nikolaj Olsen <gno@one.com>",
+  "license": "BSD-3-Clause"
+}
