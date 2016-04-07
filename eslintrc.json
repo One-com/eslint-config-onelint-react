@@ -9,6 +9,7 @@
         "react"
     ],
     "rules": {
+        "jsx-quotes": [2, "prefer-single"],
         "react/jsx-boolean-value": 2,
         "react/jsx-no-bind": 2,
         "react/no-did-update-set-state": 2,
