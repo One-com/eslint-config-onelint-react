@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 
-var codeBlockContentRegExp = /```(js|javascript|output):?(no-eol)?\n([^`]*)\n```/gm;
+var codeBlockContentRegExp = /```(js|javascript|output):?(no-eol|no-react)?\n([^`]*)\n```/gm;
 
 function findCodeBlocks (fileContent) {
     var match;
@@ -17,8 +17,12 @@ function findCodeBlocks (fileContent) {
         if (result.type === 'output') {
             blocks[blocks.length - 1].output = result;
         } else {
-            if (!match[2]) {
+            if (!match[2] || match[2] !== 'no-eol') {
               result.body += '\n';
+            }
+            if (!match[2] || match[2] !== 'no-react') {
+              result.body = "var React = require('react');\n" + result.body;
+              result.lineOffset = result.lineOffset - 1;
             }
             blocks.push(result);
         }
