@@ -9,5 +9,6 @@
         "react"
     ],
     "rules": {
+        "react/jsx-no-bind": 2
     }
 }
