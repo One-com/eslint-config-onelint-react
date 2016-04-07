@@ -9,6 +9,7 @@
         "react"
     ],
     "rules": {
+        "react/jsx-boolean-value": 2,
         "react/jsx-no-bind": 2,
         "react/no-did-update-set-state": 2,
         "react/no-unknown-property": 2,
