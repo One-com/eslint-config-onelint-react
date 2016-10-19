@@ -7,11 +7,11 @@
     "test": "mocha"
   },
   "peerDependencies": {
-    "eslint": "^2",
+    "eslint": "^3",
     "eslint-plugin-react": "^4.3.0"
   },
   "devDependencies": {
-    "eslint": "2.7.0",
+    "eslint": "3.8.1",
     "eslint-plugin-react": "4.3.0",
     "mocha": "2.4.5",
     "unexpected": "10.13.0"

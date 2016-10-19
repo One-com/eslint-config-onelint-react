@@ -7,7 +7,7 @@ var React = require('react');
 console.log(<div>Foobar</div>);
 ```
 ```output
-Line 5, column 5: 'React' is defined but never used
+Line 5, column 5: 'React' is assigned a value but never used.
 ```
 
 ```js:no-react
