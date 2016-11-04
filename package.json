@@ -4,7 +4,7 @@
   "description": "eslint configuration for one.com react code style",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "REACT=true mocha --require eslint-markdown-test 'documentation/*.md'"
   },
   "peerDependencies": {
     "eslint": "^3",
@@ -12,9 +12,9 @@
   },
   "devDependencies": {
     "eslint": "3.8.1",
+    "eslint-markdown-test": "1.1.0",
     "eslint-plugin-react": "4.3.0",
-    "mocha": "2.4.5",
-    "unexpected": "10.13.0"
+    "mocha": "2.4.5"
   },
   "keywords": [
     "onelint",

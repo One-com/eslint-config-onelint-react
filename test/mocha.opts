@@ -1,4 +1,0 @@
---recursive
---reporter spec
---require test/util/md2js
-documentation/*.md
