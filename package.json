@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-onelint-react",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "eslint configuration for one.com react code style",
   "main": "index.js",
   "scripts": {
